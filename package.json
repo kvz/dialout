@@ -4,7 +4,9 @@
   "description": "Create Dynamic DNS record on AWS based on WAN IP",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "lint": "eslint .",
+    "fix": "eslint . --fix",
   },
   "repository": "https://github.com/kvz/dialout",
   "keywords": [
@@ -17,7 +19,11 @@
   "author": "kvz",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^1.4.1"
+    "electron": "^1.4.1",
+    "eslint": "3.13.1",
+    "eslint-config-standard": "6.2.1",
+    "eslint-plugin-promise": "3.4.0",
+    "eslint-plugin-standard": "2.0.1"
   },
   "dependencies": {
     "auto-launch": "^5.0.1",

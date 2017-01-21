@@ -6,4 +6,4 @@ const publicIp = require('public-ip')
 publicIp.v4().then(ip => {
   document.write(ip)
   console.log({ip})
-});
+})

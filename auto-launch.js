@@ -1,22 +1,21 @@
-var AutoLaunch = require('auto-launch');
+const AutoLaunch = require('auto-launch')
 
-var minecraftAutoLauncher = new AutoLaunch({
-    name: 'Minecraft',
-    path: '/Applications/Minecraft.app',
-});
+const minecraftAutoLauncher = new AutoLaunch({
+  name: 'Minecraft',
+  path: '/Applications/Minecraft.app',
+})
 
-minecraftAutoLauncher.enable();
+minecraftAutoLauncher.enable()
 
-//minecraftAutoLauncher.disable();
-
+// minecraftAutoLauncher.disable();
 
 minecraftAutoLauncher.isEnabled()
-.then(function(isEnabled){
-    if(isEnabled){
-        return;
-    }
-    minecraftAutoLauncher.enable();
+.then(isEnabled => {
+  if (isEnabled) {
+    return
+  }
+  minecraftAutoLauncher.enable()
 })
-.catch(function(err){
-    // handle error
-});
+.catch(err => {
+  console.log(err)
+})
