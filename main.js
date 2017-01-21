@@ -1,16 +1,37 @@
-const electron = require('electron')
-// Module to control application life.
-const app = electron.app
-// Module to create native browser window.
-const BrowserWindow = electron.BrowserWindow
+// const electron = require('electron')
+// // Module to control application life.
+// const app = electron.app
+// // Module to create native browser window.
+// const BrowserWindow = electron.BrowserWindow
 
-const path = require('path')
-const url = require('url')
+const {app, Menu, Tray, BrowserWindow} = require('electron')
+const path                             = require('path')
+const url                              = require('url')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
+let tray = null
 
+function ready () {
+  setupTray()
+  createWindow()
+}
+function setupTray () {
+  // const appIcon = new Tray('${__dirname}/phone-call.ico')
+
+  app.on('ready', () => {
+    tray = new Tray(`${__dirname}/phone-call.ico`)
+    const contextMenu = Menu.buildFromTemplate([
+      {label: 'Item1', type: 'radio'},
+      {label: 'Item2', type: 'radio'},
+      {label: 'Item3', type: 'radio', checked: true},
+      {label: 'Item4', type: 'radio'},
+    ])
+    tray.setToolTip('This is my application.')
+    tray.setContextMenu(contextMenu)
+  })
+}
 function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: 800, height: 600})
@@ -37,7 +58,7 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow)
+app.on('ready', ready)
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
