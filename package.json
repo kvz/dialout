@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "lint": "eslint .",
-    "fix": "eslint . --fix",
+    "fix": "eslint . --fix"
   },
   "repository": "https://github.com/kvz/dialout",
   "keywords": [
@@ -23,7 +23,8 @@
     "eslint": "3.13.1",
     "eslint-config-standard": "6.2.1",
     "eslint-plugin-promise": "3.4.0",
-    "eslint-plugin-standard": "2.0.1"
+    "eslint-plugin-standard": "2.0.1",
+    "fakefile": "^0.0.8"
   },
   "dependencies": {
     "auto-launch": "^5.0.1",
