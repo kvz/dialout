@@ -8,15 +8,19 @@
   },
   "repository": "https://github.com/kvz/dialout",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "WAN",
+    "DynDNS",
+    "IP",
+    "DNS",
+    "AWS"
   ],
   "author": "kvz",
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.1"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.7.27",
+    "public-ip": "^2.0.1"
   }
 }
