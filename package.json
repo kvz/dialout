@@ -1,12 +1,12 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "dialout",
+  "version": "0.0.1",
+  "description": "Create Dynamic DNS record on AWS based on WAN IP",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/kvz/dialout",
   "keywords": [
     "Electron",
     "quick",
@@ -14,8 +14,8 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "kvz",
+  "license": "MIT",
   "devDependencies": {
     "electron": "^1.4.1"
   }
