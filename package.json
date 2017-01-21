@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron .",
     "lint": "eslint .",
+    "watch": "nodemon --watch . --ext js,html --exec 'electron .'",
     "fix": "eslint . --fix"
   },
   "repository": "https://github.com/kvz/dialout",
