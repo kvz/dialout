@@ -1,3 +1,5 @@
+const platform = require('os').platform()
+
 // const electron = require('electron')
 // // Module to control application life.
 // const app = electron.app
@@ -18,8 +20,22 @@ function ready () {
   createWindow()
 }
 function setupTray () {
-  // const appIcon = new Tray('${__dirname}/phone-call.ico')
-  tray = new Tray(`${__dirname}/phone-call.ico`)
+  let trayImage
+
+  // Check: http://electron.rocks/proper-tray-icon/
+
+  // Determine appropriate icon for platform
+  if (platform === 'darwin') {
+    trayImage = path.join(__dirname, 'phone-call.png')
+  }  else if (platform === 'win32') {
+    trayImage = path.join(__dirname, 'phone-call.ico')
+  }
+
+  // const tray = new Tray('${__dirname}/phone-call.ico')
+  tray = new Tray(trayImage)
+  if (platform === 'darwin') {
+    tray.setPressedImage(path.join(__dirname, 'phone-call-highlight.png'))
+  }
   const contextMenu = Menu.buildFromTemplate([
     {label: 'Item1', type: 'radio'},
     {label: 'Item2', type: 'radio'},
