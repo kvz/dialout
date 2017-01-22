@@ -22,8 +22,6 @@ function ready () {
 function setupTray () {
   let trayImage
 
-  // Check: http://electron.rocks/proper-tray-icon/
-
   // Determine appropriate icon for platform
   if (platform === 'darwin') {
     trayImage = path.join(__dirname, 'phone-call.png')
